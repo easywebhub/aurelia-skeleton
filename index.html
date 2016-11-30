@@ -4,7 +4,17 @@
     <meta charset="utf-8">
     <title><%- htmlWebpackPlugin.options.metadata.title %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <base href="<%- htmlWebpackPlugin.options.metadata.baseUrl %>">
+     <% if (htmlWebpackPlugin.options.metadata.ENV === 'production') { %>
+   <base href="<%- htmlWebpackPlugin.options.metadata.baseUrl %>">
+    <% } %>
+    
+     <script>
+      if (location.host === 'easywebhub.github.io' && location.protocol !== 'https:') {
+        location.protocol = 'https';
+      } else if (location.host === 'gist-run.github.io') {
+        location.href = 'https://gist.run';
+      }
+    </script>
     <!-- imported CSS are concatenated and added automatically -->
   </head>
   <body aurelia-app="main">

@@ -49,10 +49,10 @@
           </div>
           <div class="content active">
             <div class="ui secondary vertical menu">
-              <a href="index.html" class="item {{#ifCond activeLink 'index'}} active {{else}} {{/ifCond}}">
-                            Trang chủ
+              <a repeat.for="row of router.navigation" href.bind="row.href" class="item ${row.isActive ? 'active' : ''}">
+                           ${row.title}
                         </a>
-              <a href="header.html " class="item {{#ifCond activeLink 'header'}} active {{else}} {{/ifCond}}">
+              <!--<a href="header.html " class="item {{#ifCond activeLink 'header'}} active {{else}} {{/ifCond}}">
                             Header
                         </a>
               <a href="message.html " class="item {{#ifCond activeLink 'message'}} active {{else}} {{/ifCond}}">
@@ -97,7 +97,7 @@
                         </a>
               <a href="chart.html" class="item {{#ifCond activeLink 'chart'}} active {{else}} {{/ifCond}}">
                             Google chart
-                        </a>
+                        </a>-->
             </div>
           </div>
           <div class="title ">
@@ -164,6 +164,7 @@
     <div class="col-xs">
       <div class="page-host">
         <router-view></router-view>
-      </div> </div>
+      </div>
     </div>
+  </div>
 </template>

@@ -1,11 +1,20 @@
 ﻿import {Aurelia} from 'aurelia-framework';
 // we want font-awesome to load as soon as possible to show the fa-spinner
-import '../styles/styles.css';
-import 'font-awesome/css/font-awesome.css';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap';
+import '../bower_components/jquery/dist/jquery.min.js';
+
+import '../bower_components/datatables.net/js/jquery.dataTables.min.js';
+import '../bower_components/datatables.net-dt/css/jquery.dataTables.min.css';
+
+import '../bower_components/sweetalert/dist/sweetalert.css';
+import '../bower_components/sweetalert/dist/sweetalert.min.js';
+
+
 import '../bower_components/semantic/dist/semantic.min.css';
 import '../bower_components/semantic/dist/semantic.min.js';
+
+import '../styles/styles.css';
+import '../styles/inline.css';
+import '../styles/app.css';
 
 // comment out if you don't want a Promise polyfill (remove also from webpack.config.js)
 import * as Bluebird from 'bluebird';

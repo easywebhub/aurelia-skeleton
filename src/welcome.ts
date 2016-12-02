@@ -1,11 +1,12 @@
-//import {computedFrom} from 'aurelia-framework';
-
+import {computedFrom} from 'aurelia-framework';
 export class Welcome {
-}
+  contents : string = 'this is from view model';
+  
+  attached() {
 
-
-export class UpperValueConverter {
-  toView(value: string): string {
-    return value && value.toUpperCase();
+  }
+  save(){
+    alert(this.contents);
   }
 }
+

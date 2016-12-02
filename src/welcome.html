@@ -1,8 +1,9 @@
 <template>
   <section class="au-animate">
-    <h2>${heading}</h2>
+
     
-    Brown Grey Black Example
+    <h2>    Brown Grey Black Example</h2>
+
     <div class="ui inverted segment">
       <button class="ui inverted button">Standard</button>
       <button class="ui inverted red button">Red</button>
@@ -19,9 +20,7 @@
       <button class="ui inverted grey button">Grey</button>
       <button class="ui inverted black button">Black</button>
     </div>
-  </section>
-
-
+    <h2>accordion</h2>
 <div ui-accordion class="ui styled accordion">
   <div class="active title">
     <i class="dropdown icon"></i>
@@ -46,4 +45,12 @@
     <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
   </div>
 </div>
+
+<h2>editor</h2> 
+<form action="" submit.delegate="save()">
+<input ui-ckeditor type="text" id="editor1" rows="10" cols="80" value.two-way = "contents"/>  
+<button class="ui button" type="submit">Save</button>
+</form>
+
+
 </template>

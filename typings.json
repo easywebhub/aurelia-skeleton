@@ -30,13 +30,10 @@
     "lodash": "registry:npm/lodash#4.0.0+20160723033700",
     "validate.js": "github:ansman/validate.js"
   },
-  "globalDevDependencies": {
-    
-  },
+  "globalDevDependencies": {},
   "globalDependencies": {
- 
+    "ckeditor": "registry:dt/ckeditor#0.0.0+20161012130210",
     "jquery": "registry:dt/jquery#1.10.0+20160704162008",
-    
     "lockr": "registry:dt/lockr#0.8.3+20151206132246",
     "moment": "registry:dt/moment#2.8.0+20160316155526",
     "moment-node": "registry:dt/moment-node#2.11.1+20160511043338",

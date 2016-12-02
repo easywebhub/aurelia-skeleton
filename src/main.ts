@@ -12,9 +12,12 @@ import '../bower_components/sweetalert/dist/sweetalert.min.js';
 import '../bower_components/semantic/dist/semantic.min.css';
 import '../bower_components/semantic/dist/semantic.min.js';
 
+import 'font-awesome/css/font-awesome.css';
 import '../styles/styles.css';
 import '../styles/inline.css';
 import '../styles/app.css';
+
+
 
 // comment out if you don't want a Promise polyfill (remove also from webpack.config.js)
 import * as Bluebird from 'bluebird';

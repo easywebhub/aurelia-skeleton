@@ -1,5 +1,14 @@
+
+
+// polyfill fetch client conditionally
+
 export class Datatable {
+  
+
+ 
+
   dtTime:any
+   pendding:boolean=true
   dataSet: any = [
     ["Tiger Nixon", "System Architect", "Edinburgh", "5421", "2011/04/25", "$320,800"],
     ["Garrett Winters", "Accountant", "Tokyo", "8422", "2011/07/25", "$170,750"],
@@ -38,9 +47,7 @@ export class Datatable {
     ["Martena Mccray", "Post-Sales support", "Edinburgh", "8240", "2011/03/09", "$324,050"],
     ["Unity Butler", "Marketing Designer", "San Francisco", "5384", "2009/12/09", "$85,675"]
   ];
-  constructor(){
-      this.dtTime=new Date();
-  }
+
   activate() {
 
     
@@ -48,22 +55,22 @@ export class Datatable {
   }
 
   attached() {
-    // ($('#example') as any).DataTable({
-    //   data: this.dataSet,
-    //   columns: [{
-    //     title: "Name"
-    //   }, {
-    //     title: "Position"
-    //   }, {
-    //     title: "Office"
-    //   }, {
-    //     title: "Extn."
-    //   }, {
-    //     title: "Start date"
-    //   }, {
-    //     title: "Salary"
-    //   }]
-    // });
+    ($('#example') as any).DataTable({
+      data: this.dataSet,
+      columns: [{
+        title: "Name"
+      }, {
+        title: "Position"
+      }, {
+        title: "Office"
+      }, {
+        title: "Extn."
+      }, {
+        title: "Start date"
+      }, {
+        title: "Salary"
+      }]
+    });
 
     // var rules = {
     //   UserName: {
@@ -88,47 +95,37 @@ export class Datatable {
     //   // on: 'blur',
     // // onSuccess:this.submit
     //   });
-var me = this;
+
     ($('.ui.form')as any)
   .form({
-    on: 'blur',
-     onSuccess : function(event){
-       console.log('submit');
-       swal('ok');
-          event.preventDefault();
-      
-    },
-    fields: {
-      empty: {
-        identifier  : 'empty',
-        rules: [
-          {
-            type   : 'empty',
-            prompt : 'Please enter a value'
-          }
-        ]
-      },
-      dropdown: {
-        identifier  : 'dropdown',
-        rules: [
-          {
-            type   : 'empty',
-            prompt : 'Please select a dropdown value'
-          }
-        ]
-      },
-      checkbox: {
-        identifier  : 'checkbox',
-        rules: [
-          {
-            type   : 'checked',
-            prompt : 'Please check the checkbox'
-          }
-        ]
-      },
+     fields: {
+            empty: {
+              identifier  : 'empty',
+              rules: [
+                {
+                  type   : 'empty',
+                  prompt : 'Please enter a value'
+                }
+              ]
+            },
+            ckeditor: {
+              identifier  : 'ckeditor',
+                      rules: [
+                        {
+                          type   : 'empty',
+                          prompt : 'Please enter a value ckeditor'
+                        }
+                      ]
+            }
       
     
-    }
+          },
+      inline: true,
+      on: 'blur',
+       onSuccess:(event,fields)=> {
+     this.submit(fields);
+    event.preventDefault();
+  }   
     
   })
 ;
@@ -141,6 +138,19 @@ var me = this;
   
  
   }
+ 
+  submit(fields)
+   {
+     var valid = ($(".ui.form") as any).form('is valid');
+     console.log("valid",valid)
+     console.log("Submitting Form");
+     console.log(fields);
+    swal('ok');
+     
+    
+      //return true
+    
+   }
 
 
 }

@@ -1,42 +1,120 @@
 <template>
-  ?
-<!--<div class="ui raised very padded text container segment">
+  <table id="example" class="display" width="100%"></table>
+
+  <br>
+  <ui-calendar vl.bind="dtTime"></ui-calendar>
+ 
+  <br>
+  <div class="ui checkbox" ui-checkbox>
+    <input type="checkbox" name="example">
+    <label>check box</label>
+  </div>
+ 
+  <br>
+  <br>
+  
+  <div class="ui star rating" data-rating="3" ui-rating></div>
+  <br>
+  <div class="ui icon button" data-content="Tooltip" ui-tooltip>
+    <i class="add icon"></i>
+  </div>
+  <br>
+  <div class="ui accordion" ui-accordion>
+    <div class="title active">
+      <i class="dropdown icon"></i> Run accordion
+    </div>
+    <div class="content active">
+      <p class="transition visible" style="display: block !important;">A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest
+        in many households across the world.</p>
+    </div>
+  </div>
+  <br>
+  <a class="item" ui-modal style="color:green">
+    Run modal
+</a>
+  <div class="ui modal">
+    <i class="close icon"></i>
+    <div class="header">
+      Profile Picture
+    </div>
+    <div class="image content">
+      <div class="ui medium image">
+        <img src="/images/avatar/large/chris.jpg">
+      </div>
+      <div class="description">
+        <div class="ui header">We've auto-chosen a profile image for you.</div>
+        <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image
+          associated with your registered e-mail address.</p>
+        <p>Is it okay to use this photo?</p>
+      </div>
+    </div>
+    <div class="actions">
+      <div class="ui black deny button">
+        Nope
+      </div>
+      <div class="ui positive right labeled icon button">
+        Yep, that's me
+        <i class="checkmark icon"></i>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="ui three item menu" ui-menu>
+    <a class="active item">Home</a>
+    <a class="item">About</a>
+    <a class="item">Contact</a>
+  </div>
+  <div class="ui vertical menu" ui-menu>
+    <a class="teal item">
+    Home
+    <div class="ui teal left pointing label">1</div>
+  </a>
+    <a class="item">
+    About
+    <div class="ui label">51</div>
+  </a>
+    <a class="item active">
+     Contact
+    <div class="ui label">1</div>
+  </a>
+    <div class="item">
+      <div class="ui transparent icon input">
+        <input type="text" placeholder="Search mail...">
+        <i class="search icon"></i>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="ui segment">
+  <p></p>
+  <div class="ui active dimmer">
+    <div class="ui loader"></div>
+  </div>
+</div>
+<br>
+<select class="ui dropdown" ui-dropdown>
+  <option value="">Gender</option>
+  <option value="1">Male</option>
+  <option value="0">Female</option>
+</select>
+<br>
+<div class="ui raised very padded text container segment">
   <h2 class="ui header">Dogs Roles with Humans</h2>
+ 
   <form class="ui form" submit.delegate="submit()">
-  <div class="field">
-    <label>Empty</label>
-    <input data-validate="UserName" name="UserName" type="text" id="UserName">
-  </div>
-  <div class="field">
-    <label>ck</label>
-  <input ui-ckeditor  data-validate="ckeditor" type="text"  id="ckeditor" rows="10" cols="80" value.two-way ="contents"> 
-  </div>
-
-  <button type="submit">save</button>
-</form>
-</div>-->
-
-<form class="ui form" submit.delegate="submit()">
   <div class="field">
     <label>Empty</label>
     <input name="empty" type="text">
   </div>
   <div class="field">
-    <label>Dropdown</label>
-    <select class="ui dropdown" name="dropdown">
-      <option value="">Select</option>
-      <option value="male">Choice 1</option>
-      <option value="female">Choice 2</option>
-    </select>
+    <label>ckeditor</label>
+   <input ui-ckeditor type="text" name="ckeditor" id="ckeditor" rows="10" cols="80" value.two-way = "contents"/> 
   </div>
-  <div class="inline field">
-    <div class="ui checkbox">
-      <input type="checkbox" name="checkbox">
-      <label>Checkbox</label>
-    </div>
-  </div>
-  <div class="ui submit button" >Submit</div>
+  
+  <button class="ui submit button" type="submit">Submit</button>
   <div class="ui error message"></div>
 </form>
+</div>
+
 
 </template>

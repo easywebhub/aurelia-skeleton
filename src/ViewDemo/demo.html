@@ -1,0 +1,42 @@
+<template>
+  ?
+<!--<div class="ui raised very padded text container segment">
+  <h2 class="ui header">Dogs Roles with Humans</h2>
+  <form class="ui form" submit.delegate="submit()">
+  <div class="field">
+    <label>Empty</label>
+    <input data-validate="UserName" name="UserName" type="text" id="UserName">
+  </div>
+  <div class="field">
+    <label>ck</label>
+  <input ui-ckeditor  data-validate="ckeditor" type="text"  id="ckeditor" rows="10" cols="80" value.two-way ="contents"> 
+  </div>
+
+  <button type="submit">save</button>
+</form>
+</div>-->
+
+<form class="ui form" submit.delegate="submit()">
+  <div class="field">
+    <label>Empty</label>
+    <input name="empty" type="text">
+  </div>
+  <div class="field">
+    <label>Dropdown</label>
+    <select class="ui dropdown" name="dropdown">
+      <option value="">Select</option>
+      <option value="male">Choice 1</option>
+      <option value="female">Choice 2</option>
+    </select>
+  </div>
+  <div class="inline field">
+    <div class="ui checkbox">
+      <input type="checkbox" name="checkbox">
+      <label>Checkbox</label>
+    </div>
+  </div>
+  <div class="ui submit button" >Submit</div>
+  <div class="ui error message"></div>
+</form>
+
+</template>

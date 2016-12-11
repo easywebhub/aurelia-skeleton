@@ -1,5 +1,5 @@
 export class Datatable {
-  dtTime:any
+  dtTime: any
   dataSet: any = [
     ["Tiger Nixon", "System Architect", "Edinburgh", "5421", "2011/04/25", "$320,800"],
     ["Garrett Winters", "Accountant", "Tokyo", "8422", "2011/07/25", "$170,750"],
@@ -38,12 +38,12 @@ export class Datatable {
     ["Martena Mccray", "Post-Sales support", "Edinburgh", "8240", "2011/03/09", "$324,050"],
     ["Unity Butler", "Marketing Designer", "San Francisco", "5384", "2009/12/09", "$85,675"]
   ];
-  constructor(){
-      this.dtTime=new Date();
+  constructor() {
+    this.dtTime = new Date();
   }
   activate() {
 
-    
+
 
   }
 

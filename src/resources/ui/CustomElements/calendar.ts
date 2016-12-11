@@ -34,7 +34,7 @@ export class UICalendar{
         
      }
     attached() {
-        
+       
         ($(this.element) as any).calendar('set date', this.vl=this.focusDate(this.vl));
       ($(this.element) as any ).calendar(
             {

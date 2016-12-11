@@ -1,8 +1,7 @@
 // polyfill fetch client conditionally
 
 export class Datatable {
-
-  slect="af"
+  slect = "1"
   dtTime: any
   pendding: boolean = true
   dataSet: any = [
@@ -43,18 +42,24 @@ export class Datatable {
     ["Martena Mccray", "Post-Sales support", "Edinburgh", "8240", "2011/03/09", "$324,050"],
     ["Unity Butler", "Marketing Designer", "San Francisco", "5384", "2009/12/09", "$85,675"]
   ];
-  list=[{"id":1,"name":"name"},{"id":2,"name":"name2"},{"id":3,"name":"name3"}]
+  list = [{
+    "id": "1",
+    "name": "name"
+  }, {
+    "id": "2",
+    "name": "name2"
+  }, {
+    "id": "3",
+    "name": "name3"
+  }]
 
   activate() {
-
-
 
   }
 
   attached() {
- 
    
-   //console.log('th',this.slect)
+  
     ($('#example') as any).DataTable({
       data: this.dataSet,
       columns: [{
@@ -113,8 +118,6 @@ export class Datatable {
             prompt: 'Please enter a value ckeditor'
           }]
         }
-
-
       },
       inline: true,
       on: 'blur',
@@ -124,8 +127,6 @@ export class Datatable {
       }
 
     });
-
-
   }
 
   submit(fields) {
@@ -134,10 +135,7 @@ export class Datatable {
     console.log("Submitting Form");
     console.log(fields);
     swal('ok');
-
-
-    //return true
-
+   //return true
   }
 
 

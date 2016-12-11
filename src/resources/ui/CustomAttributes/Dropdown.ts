@@ -1,4 +1,9 @@
-import {inject, bindable, bindingMode , customAttribute  } from 'aurelia-framework';
+import {
+  inject,
+  bindable,
+  bindingMode,
+  customAttribute
+} from 'aurelia-framework';
 
 //import * as $ from "jquery";
 
@@ -6,37 +11,39 @@ import {inject, bindable, bindingMode , customAttribute  } from 'aurelia-framewo
 @inject(Element)
 export class UIDropdown {
   element: any;
-   @bindable({ defaultBindingMode: bindingMode.twoWay }) vdrop
-  
+  @bindable({
+    defaultBindingMode: bindingMode.twoWay
+  }) vdrop
+
 
   constructor(element) {
     this.element = element;
-    this.vdrop = "";
+
   }
 
   attached() {
+    ($('.ui.dropdown') as any).dropdown('refresh');
 
+    setTimeout(() => {
 
-//($('.ui.dropdown')as any).dropdown();
-// A $( document ).ready() block.
-// $( document ).ready(function() {
-        
-    //console.log('this.valueDrop',this.vdrop)
+        ($('.ui.dropdown') as any).dropdown(
+          'set selected', this.vdrop
 
-($('.ui.dropdown') as any).dropdown('set selected', this.vdrop)
-  
+        );
 
-    
-   
+      }
+
+      , 1);
     ($('.ui.dropdown') as any)
-  .dropdown({
-        onChange: function(value, text, $selectedItem) {
-        console.log('value change',value);
-    }
-  })
-  
+    .dropdown({
+      onChange: function (value, text, $selectedItem) {
+        this.vdrop = value
+        console.log('chang drop', this.vdrop);
+      }
+    })
+
   }
-  
+
 
 
 }

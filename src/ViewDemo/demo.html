@@ -53,7 +53,7 @@
         <i class="checkmark icon"></i>
       </div>
     </div>
-  </div>
+  </div>-->
   <br>
   <div class="ui three item menu" ui-menu>
     <a class="active item">Home</a>
@@ -118,43 +118,20 @@
   <div class="ui bottom attached tab segment" data-tab="third">
     Third
   </div>
+ <div class="ui multiple selection dropdown" ui-dropdown vdrop.two-way="slect">
+  <input name="gender" type="hidden" value="${slect}">
+  <i class="dropdown icon"></i>
+  <div class="default text">--Select All--</div>
+  <div class="menu">
+      <div class="item" data-value="${item.id}" repeat.for="item of list">${item.name}</div>
+      
+  </div>
+</div>
+${slect}
   <br>
   <br>
   
-  <div class="ui fluid multiple search normal selection dropdown" ui-dropdown vdrop.bind="slect">
-  <input type="hidden" name="country">
-  <i class="dropdown icon"></i>
-  <div class="default text">Select Country</div>
-  <div class="menu">
-  <div class="item" data-value="af"><i class="af flag"></i>Afghanistan</div>
-  <div class="item" data-value="ax"><i class="ax flag"></i>Aland Islands</div>
-  <div class="item" data-value="al"><i class="al flag"></i>Albania</div>
-  <div class="item" data-value="dz"><i class="dz flag"></i>Algeria</div>
-  <div class="item" data-value="as"><i class="as flag"></i>American Samoa</div>
-  <div class="item" data-value="ad"><i class="ad flag"></i>Andorra</div>
-  <div class="item" data-value="ao"><i class="ao flag"></i>Angola</div>
-  <div class="item" data-value="ai"><i class="ai flag"></i>Anguilla</div>
-  <div class="item" data-value="ag"><i class="ag flag"></i>Antigua</div>
-  <div class="item" data-value="ar"><i class="ar flag"></i>Argentina</div>
-  <div class="item" data-value="am"><i class="am flag"></i>Armenia</div>
-  <div class="item" data-value="aw"><i class="aw flag"></i>Aruba</div>
-  <div class="item" data-value="au"><i class="au flag"></i>Australia</div>
-  <div class="item" data-value="at"><i class="at flag"></i>Austria</div>
-  <div class="item" data-value="az"><i class="az flag"></i>Azerbaijan</div>
-  <div class="item" data-value="bs"><i class="bs flag"></i>Bahamas</div>
-  <div class="item" data-value="bh"><i class="bh flag"></i>Bahrain</div>
-  <div class="item" data-value="bd"><i class="bd flag"></i>Bangladesh</div>
-  <div class="item" data-value="bb"><i class="bb flag"></i>Barbados</div>
-  <div class="item" data-value="by"><i class="by flag"></i>Belarus</div>
-  <div class="item" data-value="be"><i class="be flag"></i>Belgium</div>
-  <div class="item" data-value="bz"><i class="bz flag"></i>Belize</div>
-  <div class="item" data-value="bj"><i class="bj flag"></i>Benin</div>
-  <div class="item" data-value="bm"><i class="bm flag"></i>Bermuda</div>
-  <div class="item" data-value="bt"><i class="bt flag"></i>Bhutan</div>
-  <div class="item" data-value="bo"><i class="bo flag"></i>Bolivia</div>
-  <div class="item" data-value="ba"><i class="ba flag"></i>Bosnia</div>
-  <div class="item" data-value="bw"><i class="bw flag"></i>Botswana</div>
-  <div class="item" data-value="bv"><i class="bv flag"></i>Bouvet Island</div>
-  <div class="item" data-value="br"><i class="br flag"></i>Brazil</div>
-  <div class="item" data-value="vg"><i class="vg flag"></i>British Virgin Islands</div></div></div>
+
+
+
 </template>

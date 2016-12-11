@@ -14,6 +14,7 @@ import 'semantic-ui-css/semantic.min.js';
 import 'semantic-ui-calendar/dist/calendar.min.css';
 import 'semantic-ui-calendar/dist/calendar.min.js';
 
+
 import 'font-awesome/css/font-awesome.css';
 import '../styles/styles.css';
 import '../styles/inline.css';

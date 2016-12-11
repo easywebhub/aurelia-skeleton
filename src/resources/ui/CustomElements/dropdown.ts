@@ -9,6 +9,7 @@ export class UiDropDown{
        
         this.element = element;
         this.vdrop ='';
+        
          console.log('default', this.vdrop);
     }
    

@@ -3,7 +3,12 @@
  * To learn more about how to use Easy Webpack
  * Take a look at the README here: https://github.com/easy-webpack/core
  **/
-import { generateConfig, get, stripMetadata, EasyWebpackConfig } from '@easy-webpack/core';
+import {
+  generateConfig,
+  get,
+  stripMetadata,
+  EasyWebpackConfig
+} from '@easy-webpack/core';
 import * as path from 'path';
 
 import * as envProd from '@easy-webpack/config-env-production';
@@ -69,10 +74,11 @@ const coreBundles = {
 /**
  * Main Webpack Configuration
  */
-let config = generateConfig(
-  {
+
+let config = generateConfig({
+   
     entry: {
-      'app': ['./src/main' /* this is filled by the aurelia-webpack-plugin */],
+      'app': ['./src/main' /* this is filled by the aurelia-webpack-plugin */ ],
       'aurelia-bootstrap': coreBundles.bootstrap,
       'aurelia': coreBundles.aurelia.filter(pkg => coreBundles.bootstrap.indexOf(pkg) === -1)
     },
@@ -89,29 +95,66 @@ let config = generateConfig(
    * For Webpack docs, see: https://webpack.js.org/configuration/
    */
 
-  ENV === 'test' || ENV === 'development' ? 
-    envDev(ENV !== 'test' ? {} : {devtool: 'inline-source-map'}) :
-    envProd({ /* devtool: '...' */ }),
+  ENV === 'test' || ENV === 'development' ?
+  envDev(ENV !== 'test' ? {} : {
+    devtool: 'inline-source-map'
+  }) :
+  envProd({ /* devtool: '...' */ }),
 
-  aurelia({root: rootDir, src: srcDir, title: title, baseUrl: baseUrl}),
-  typescript(ENV !== 'test' ? {} : { options: { doTypeCheck: false, sourceMap: false, inlineSourceMap: true, inlineSources: true } }),
+  aurelia({
+    root: rootDir,
+    src: srcDir,
+    title: title,
+    baseUrl: baseUrl
+  }),
+  typescript(ENV !== 'test' ? {} : {
+    options: {
+      doTypeCheck: false,
+      sourceMap: false,
+      inlineSourceMap: true,
+      inlineSources: true
+    }
+  }),
   html(),
-  css({ filename: 'styles.css', allChunks: true, sourceMap: false }),
+  css({
+    filename: 'styles.css',
+    allChunks: true,
+    sourceMap: false
+  }),
   fontAndImages(),
   globalBluebird(),
   globalJquery(),
-  generateIndexHtml({minify: ENV === 'production'}),
+  generateIndexHtml({
+    minify: ENV === 'production'
+  }),
 
   ...(ENV === 'production' || ENV === 'development' ? [
-      commonChunksOptimize({appChunkName: 'app', firstChunk: 'aurelia-bootstrap'}),
-      copyFiles({patterns: [{ from: 'favicon.ico', to: 'favicon.ico' }]})
-    ] : [
+    commonChunksOptimize({
+      appChunkName: 'app',
+      firstChunk: 'aurelia-bootstrap'
+    }),
+    copyFiles({
+      patterns: [{
+        from: 'favicon.ico',
+        to: 'favicon.ico'
+      }]
+    })
+  ] : [
     /* ENV === 'test' */
-    generateCoverage({ options: { esModules: true } })
+    generateCoverage({
+      options: {
+        esModules: true
+      }
+    })
   ]),
 
   ENV === 'production' ?
-    uglify({debug: false, mangle: { except: ['cb', '__webpack_require__'] }}) : {}
+  uglify({
+    debug: false,
+    mangle: {
+      except: ['cb', '__webpack_require__']
+    }
+  }) : {}
 );
 
 module.exports = stripMetadata(config);

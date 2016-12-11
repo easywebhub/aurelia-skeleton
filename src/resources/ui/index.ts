@@ -3,11 +3,12 @@ export function configure(aurelia) {
     	'./CustomAttributes/Accordion',
       './CustomAttributes/Ckeditor',
       './CustomElements/calendar',
-      './CustomElements/dropdown',
+      './CustomAttributes/DropDown',
       './CustomAttributes/CheckBox',
       './CustomAttributes/Rating',
        './CustomAttributes/Modal',
        './CustomAttributes/Tooltip',
-       './CustomAttributes/Menu'
+       './CustomAttributes/Menu',
+        './CustomAttributes/Tab'
         );
 }

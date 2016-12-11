@@ -1,14 +1,10 @@
-
-
 // polyfill fetch client conditionally
 
 export class Datatable {
-  
 
- 
-
-  dtTime:any
-   pendding:boolean=true
+  slect="af"
+  dtTime: any
+  pendding: boolean = true
   dataSet: any = [
     ["Tiger Nixon", "System Architect", "Edinburgh", "5421", "2011/04/25", "$320,800"],
     ["Garrett Winters", "Accountant", "Tokyo", "8422", "2011/07/25", "$170,750"],
@@ -47,14 +43,18 @@ export class Datatable {
     ["Martena Mccray", "Post-Sales support", "Edinburgh", "8240", "2011/03/09", "$324,050"],
     ["Unity Butler", "Marketing Designer", "San Francisco", "5384", "2009/12/09", "$85,675"]
   ];
+  list=[{"id":1,"name":"name"},{"id":2,"name":"name2"},{"id":3,"name":"name3"}]
 
   activate() {
 
-    
+
 
   }
 
   attached() {
+ 
+   
+   //console.log('th',this.slect)
     ($('#example') as any).DataTable({
       data: this.dataSet,
       columns: [{
@@ -87,70 +87,58 @@ export class Datatable {
     //       prompt: 'Xin vui lòng nhập tên vào'
     //     }]
     //   },
-      
+
     // };
-  
+
     //   ($(".ui.form") as any).form({fields:rules,
     //   // inline: true,
     //   // on: 'blur',
     // // onSuccess:this.submit
     //   });
 
-    ($('.ui.form')as any)
-  .form({
-     fields: {
-            empty: {
-              identifier  : 'empty',
-              rules: [
-                {
-                  type   : 'empty',
-                  prompt : 'Please enter a value'
-                }
-              ]
-            },
-            ckeditor: {
-              identifier  : 'ckeditor',
-                      rules: [
-                        {
-                          type   : 'empty',
-                          prompt : 'Please enter a value ckeditor'
-                        }
-                      ]
-            }
-      
-    
-          },
+    ($('.ui.form') as any)
+    .form({
+      fields: {
+        empty: {
+          identifier: 'empty',
+          rules: [{
+            type: 'empty',
+            prompt: 'Please enter a value'
+          }]
+        },
+        ckeditor: {
+          identifier: 'ckeditor',
+          rules: [{
+            type: 'empty',
+            prompt: 'Please enter a value ckeditor'
+          }]
+        }
+
+
+      },
       inline: true,
       on: 'blur',
-       onSuccess:(event,fields)=> {
-     this.submit(fields);
-    event.preventDefault();
-  }   
-    
-  })
-;
+      onSuccess: (event, fields) => {
+        this.submit(fields);
+        event.preventDefault();
+      }
+
+    });
 
 
-
-    
-   
- 
-  
- 
   }
- 
-  submit(fields)
-   {
-     var valid = ($(".ui.form") as any).form('is valid');
-     console.log("valid",valid)
-     console.log("Submitting Form");
-     console.log(fields);
+
+  submit(fields) {
+    var valid = ($(".ui.form") as any).form('is valid');
+    console.log("valid", valid)
+    console.log("Submitting Form");
+    console.log(fields);
     swal('ok');
-     
-    
-      //return true
-    
-   }
+
+
+    //return true
+
+  }
 
 
 }

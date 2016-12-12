@@ -3,7 +3,7 @@
 export class Datatable { 
    pageNumber:number
    pageSize:number
-  totalRecords :number
+   total :number
    current :number
   slect = "1"
   dtTime: any
@@ -56,11 +56,14 @@ export class Datatable {
     "id": "3",
     "name": "name3"
   }]
+ 
+ 
  constructor(){
-    this.pageNumber = 1
-   this.pageSize = 5
-  this.totalRecords = 100
+   this.pageNumber = 1
+   this.pageSize =20
+  this.total = 100
    this.current = 1
+   this.dtTime=""
  }
   activate() {
      

@@ -1,5 +1,6 @@
 export function configure(aurelia) {
     aurelia.globalResources(
+      './ValueConverter/take-form-to',
     	'./CustomAttributes/Accordion',
       './CustomAttributes/Ckeditor',
       './CustomElements/calendar',
@@ -9,6 +10,8 @@ export function configure(aurelia) {
        './CustomAttributes/Modal',
        './CustomAttributes/Tooltip',
        './CustomAttributes/Menu',
-        './CustomAttributes/Tab'
+        './CustomAttributes/Tab',
+          './CustomElements/pagination'
+        
         );
 }

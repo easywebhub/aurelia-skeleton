@@ -1,6 +1,10 @@
 // polyfill fetch client conditionally
 
-export class Datatable {
+export class Datatable { 
+   pageNumber:number
+   pageSize:number
+  totalRecords :number
+   current :number
   slect = "1"
   dtTime: any
   pendding: boolean = true
@@ -52,30 +56,35 @@ export class Datatable {
     "id": "3",
     "name": "name3"
   }]
-
+ constructor(){
+    this.pageNumber = 1
+   this.pageSize = 5
+  this.totalRecords = 100
+   this.current = 1
+ }
   activate() {
-
-  }
+     
+  } 
 
   attached() {
    
   
-    ($('#example') as any).DataTable({
-      data: this.dataSet,
-      columns: [{
-        title: "Name"
-      }, {
-        title: "Position"
-      }, {
-        title: "Office"
-      }, {
-        title: "Extn."
-      }, {
-        title: "Start date"
-      }, {
-        title: "Salary"
-      }]
-    });
+    // ($('#example') as any).DataTable({
+    //   data: this.dataSet,
+    //   columns: [{
+    //     title: "Name"
+    //   }, {
+    //     title: "Position"
+    //   }, {
+    //     title: "Office"
+    //   }, {
+    //     title: "Extn."
+    //   }, {
+    //     title: "Start date"
+    //   }, {
+    //     title: "Salary"
+    //   }]
+    // });
 
     // var rules = {
     //   UserName: {
@@ -101,41 +110,41 @@ export class Datatable {
     // // onSuccess:this.submit
     //   });
 
-    ($('.ui.form') as any)
-    .form({
-      fields: {
-        empty: {
-          identifier: 'empty',
-          rules: [{
-            type: 'empty',
-            prompt: 'Please enter a value'
-          }]
-        },
-        ckeditor: {
-          identifier: 'ckeditor',
-          rules: [{
-            type: 'empty',
-            prompt: 'Please enter a value ckeditor'
-          }]
-        }
-      },
-      inline: true,
-      on: 'blur',
-      onSuccess: (event, fields) => {
-        this.submit(fields);
-        event.preventDefault();
-      }
+  //   ($('.ui.form') as any)
+  //   .form({
+  //     fields: {
+  //       empty: {
+  //         identifier: 'empty',
+  //         rules: [{
+  //           type: 'empty',
+  //           prompt: 'Please enter a value'
+  //         }]
+  //       },
+  //       ckeditor: {
+  //         identifier: 'ckeditor',
+  //         rules: [{
+  //           type: 'empty',
+  //           prompt: 'Please enter a value ckeditor'
+  //         }]
+  //       }
+  //     },
+  //     inline: true,
+  //     on: 'blur',
+  //     onSuccess: (event, fields) => {
+  //       this.submit(fields);
+  //       event.preventDefault();
+  //     }
 
-    });
-  }
+  //   });
+  // }
 
-  submit(fields) {
-    var valid = ($(".ui.form") as any).form('is valid');
-    console.log("valid", valid)
-    console.log("Submitting Form");
-    console.log(fields);
-    swal('ok');
-   //return true
+  // submit(fields) {
+  //   var valid = ($(".ui.form") as any).form('is valid');
+  //   console.log("valid", valid)
+  //   console.log("Submitting Form");
+  //   console.log(fields);
+  //   swal('ok');
+  //  //return true
   }
 
 

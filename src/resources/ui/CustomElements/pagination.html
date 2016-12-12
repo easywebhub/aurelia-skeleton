@@ -1,0 +1,23 @@
+<template>
+  <div class="ui pagination menu" ui-menu  total-records.bind="totalRecords" page-size.bind="pageSize" page-number.bind="pageNumber">
+    <!--<a click.delegate="firstPageNumber()" class="item">
+          First
+    </a>
+    <a click.delegate="PreviousPage()" class="item" if.bind="current!=1">
+         Previous
+    </a>-->
+   
+      <a  repeat.for="index of indexArray" click.delegate="$parent.btnClick(index)" class.bind="current==index?'item active':'item'">${index}</a>
+   
+    <!--<a click.delegate="NextPage()" class.bind="current<all?'item active':'item'" if.bind="current!=all">
+         Next
+    </a>
+    <a click.delegate="lastPageNumber()" class="item">
+         Last
+     </a>-->
+   <a class="item">
+         ${all}
+     </a>
+  </div>
+</template>
+ 

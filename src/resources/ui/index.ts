@@ -1,9 +1,8 @@
 export function configure(aurelia) {
     aurelia.globalResources(
     	'./CustomAttributes/Accordion',
-      './CustomAttributes/Ckeditor',
       './CustomElements/calendar',
-      './CustomAttributes/DropDown',
+      './CustomAttributes/Dropdown',
       './CustomAttributes/CheckBox',
       './CustomAttributes/Rating',
        './CustomAttributes/Modal',

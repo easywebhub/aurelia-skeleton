@@ -14,25 +14,17 @@ export class UIDropdown {
   @bindable({
     defaultBindingMode: bindingMode.twoWay
   }) vdrop
-
-
   constructor(element) {
     this.element = element;
-
   }
-
   attached() {
     ($('.ui.dropdown') as any).dropdown('refresh');
 
     setTimeout(() => {
-
         ($('.ui.dropdown') as any).dropdown(
           'set selected', this.vdrop
-
         );
-
       }
-
       , 1);
     ($('.ui.dropdown') as any)
     .dropdown({

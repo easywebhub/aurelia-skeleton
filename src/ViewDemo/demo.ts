@@ -1,14 +1,9 @@
-// polyfill fetch client conditionally
-
 export class Datatable { 
    pageSize:number=10
    total :number=130
    current :number=1
    allPage:number
-   pageSize1:number=10
-   total1 :number=100
-   current1 :number=1
-   allPage1:number
+   
   slect = "1"
   dtTime: any
   pendding: boolean = true
@@ -66,90 +61,88 @@ export class Datatable {
 
  constructor(){
    this.allPage = Math.ceil(this.total / this.pageSize)
-   this.allPage1 = Math.ceil(this.total1 / this.pageSize1)
-   //this.dtTime=""
- }
+  }
   
 
   attached() {
    
   
-    // ($('#example') as any).DataTable({
-    //   data: this.dataSet,
-    //   columns: [{
-    //     title: "Name"
-    //   }, {
-    //     title: "Position"
-    //   }, {
-    //     title: "Office"
-    //   }, {
-    //     title: "Extn."
-    //   }, {
-    //     title: "Start date"
-    //   }, {
-    //     title: "Salary"
-    //   }]
-    // });
+    ($('#example') as any).DataTable({
+      data: this.dataSet,
+      columns: [{
+        title: "Name"
+      }, {
+        title: "Position"
+      }, {
+        title: "Office"
+      }, {
+        title: "Extn."
+      }, {
+        title: "Start date"
+      }, {
+        title: "Salary"
+      }]
+    });
 
-    // var rules = {
-    //   UserName: {
-    //     identifier: 'UserName',
-    //     rules: [{
-    //       type: 'empty',
-    //       prompt: 'Xin vui lòng nhập tên vào'
-    //     }]
-    //   },
-    //   ckeditor: {
-    //     identifier: 'ckeditor',
-    //     rules: [{
-    //       type: 'empty',
-    //       prompt: 'Xin vui lòng nhập tên vào'
-    //     }]
-    //   },
+    var rules = {
+      UserName: {
+        identifier: 'UserName',
+        rules: [{
+          type: 'empty',
+          prompt: 'Xin vui lòng nhập tên vào'
+        }]
+      },
+      ckeditor: {
+        identifier: 'ckeditor',
+        rules: [{
+          type: 'empty',
+          prompt: 'Xin vui lòng nhập tên vào'
+        }]
+      },
 
-    // };
+    };
 
-    //   ($(".ui.form") as any).form({fields:rules,
-    //   // inline: true,
-    //   // on: 'blur',
-    // // onSuccess:this.submit
-    //   });
+      ($(".ui.form") as any).form({fields:rules,
+      // inline: true,
+      // on: 'blur',
+    // onSuccess:this.submit
+      });
 
-  //   ($('.ui.form') as any)
-  //   .form({
-  //     fields: {
-  //       empty: {
-  //         identifier: 'empty',
-  //         rules: [{
-  //           type: 'empty',
-  //           prompt: 'Please enter a value'
-  //         }]
-  //       },
-  //       ckeditor: {
-  //         identifier: 'ckeditor',
-  //         rules: [{
-  //           type: 'empty',
-  //           prompt: 'Please enter a value ckeditor'
-  //         }]
-  //       }
-  //     },
-  //     inline: true,
-  //     on: 'blur',
-  //     onSuccess: (event, fields) => {
-  //       this.submit(fields);
-  //       event.preventDefault();
-  //     }
+    ($('.ui.form') as any)
+    .form({
+      fields: {
+        empty: {
+          identifier: 'empty',
+          rules: [{
+            type: 'empty',
+            prompt: 'Please enter a value'
+          }]
+        },
+        ckeditor: {
+          identifier: 'ckeditor',
+          rules: [{
+            type: 'empty',
+            prompt: 'Please enter a value ckeditor'
+          }]
+        }
+      },
+      inline: true,
+      on: 'blur',
+      onSuccess: (event, fields) => {
+        this.submit(fields);
+        event.preventDefault();
+      }
 
-  //   });
-  // }
+    });
+  }
 
-  // submit(fields) {
-  //   var valid = ($(".ui.form") as any).form('is valid');
-  //   console.log("valid", valid)
-  //   console.log("Submitting Form");
-  //   console.log(fields);
-  //   swal('ok');
-  //  //return true
+  submit(fields) {
+    var valid = ($(".ui.form") as any).form('is valid');
+    console.log("valid", valid)
+    console.log("Submitting Form");
+    console.log(fields);
+    swal('ok');
+   //return true
   }
 
 

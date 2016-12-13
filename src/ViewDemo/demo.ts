@@ -1,7 +1,30 @@
+import { bindingMode,
+  BindingEngine,
+  inject,lazy} from 'aurelia-framework';
+import {HttpClient} from 'aurelia-fetch-client';
+
+// polyfill fetch client conditionally
+const fetch = !self.fetch ? System.import('isomorphic-fetch') : Promise.resolve(self.fetch);
+
+  // async activate(): Promise<void> {
+  //   // ensure fetch is polyfilled before we create the http client
+  //   await fetch;
+  //   const http = this.http = this.getHttpClient();
+
+  //   http.configure(config => {
+  //     config
+  //       .useStandardConfiguration()
+  //       .withBaseUrl('https://api.github.com/');
+  //   });
+
+  //   const response = await http.fetch('users');
+  //   this.users = await response.json();
+  // }
+
 export class Datatable { 
    pageSize:number=10
-   total :number=130
-   current :number=1
+   total :number=0
+   current :number
    allPage:number
    
   slect = "1"
@@ -56,12 +79,34 @@ export class Datatable {
     "name": "name3"
   }]
  
- 
+   listData=[]
+  http: HttpClient;
 
+  constructor(@lazy(HttpClient) private getHttpClient: () => HttpClient) {
 
- constructor(){
-   this.allPage = Math.ceil(this.total / this.pageSize)
+     this.current = 1;
   }
+
+
+ async activate(): Promise<void> {
+    // ensure fetch is polyfilled before we create the http client
+    await fetch;
+    const http = this.http = this.getHttpClient();
+
+    http.configure(config => {
+      config
+        .useStandardConfiguration()
+        .withBaseUrl('http://api.easywebhub.com/');
+    });
+
+    const response = await http.fetch('website/all');
+    var data = await response.json();
+    this.listData=data.Data
+    this.total= (data as any).ItemsCount;
+    console.log('total',this.total)
+    this.allPage = Math.ceil(this.total / this.pageSize)
+    
+}
   
 
   attached() {

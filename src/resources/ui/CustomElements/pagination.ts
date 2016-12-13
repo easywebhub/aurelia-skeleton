@@ -13,55 +13,56 @@ export class UIPagination {
  @bindable({
   defaultBindingMode: bindingMode.twoWay
  })
-@bindable totalRecord=120
+@bindable totalRecord=1
 @bindable pageSize=10
-@bindable pages
-@bindable current=1
+@bindable pageAll
+@bindable currentPage=1
   numberArr=[]
   
   constructor(bindingEngine) {
-  this.pages = Math.ceil(this.totalRecord / this.pageSize)
+  this.pageAll = Math.ceil(this.totalRecord / this.pageSize)
    
-   this.current = 1
+   this.currentPage = 1
     this.numberArr = this.indexs()
-    let subscriptioncurrent = bindingEngine.propertyObserver(this, 'current')
+    let subscriptioncurrent = bindingEngine.propertyObserver(this,'currentPage')
       .subscribe(() => {
+        console.log('current',this.currentPage)
         this.numberArr = this.indexs()
       });
   }
 
   firstPageNumber() {
-    return this.current = 1
+    return this.currentPage = 1
   }
   lastPageNumber() {
-    return this.current = this.pages
+    return this.currentPage = this.pageAll
   }
   NextPage() {
-    return this.current < this.pages ? this.current++ : this.pages
+    return this.currentPage < this.pageAll ? this.currentPage++ : this.pageAll
   }
   PreviousPage() {
-    if (this.current == 1)
-      return this.current
-    return this.current--
+    if (this.currentPage == 1)
+      return this.currentPage
+    return this.currentPage--
   }
   btnClick(index) {
-    return this.current = index
+    return this.currentPage = index
   }
   indexs() {
     let left = 1;
-    let right = this.pages
+    let right = this.pageAll
     let ar: any = []
-    if (this.pages >= 11) {
-      if (this.current > 5 && this.current < this.pages - 4) {
-        left = this.current - 5
-        right = this.current + 4
+    if (this.pageAll >= 11) {
+      if (this.currentPage > 5 && this.currentPage < this.pageAll - 4) {
+        left = this.currentPage - 5
+        right = this.currentPage + 4
       } else {
-        if (this.current <= 5) {
+        if (this.currentPage <= 5) {
           left = 1
           right = 10
         } else {
-          right = this.pages
-          left = this.pages - 9
+          right = this.pageAll
+          left = this.pageAll - 9
         }
       }
     }

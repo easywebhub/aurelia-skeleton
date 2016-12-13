@@ -10,7 +10,9 @@ export function configure(aurelia) {
        './CustomAttributes/Tooltip',
        './CustomAttributes/Menu',
         './CustomAttributes/Tab',
-          './CustomElements/pagination'
+          './CustomElements/pagination',
+          './CustomAttributes/Ckeditor',
+          
         
         );
 }

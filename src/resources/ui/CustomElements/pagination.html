@@ -6,15 +6,14 @@
     }
 
   </style>
-  <div class="ui pagination menu" ui-menu total-records.bind="totalRecord" page-size.bind="pageSize" page-number.bind="pageNumber"
-    current.bind="current" all.bind="all" show.bind="pages>0">
+  <div class="ui pagination menu" ui-menu show.bind="totalRecord>0">
     <a click.delegate="PreviousPage()" class.bind="current === 1 ? 'disabled item': 'item'" style.bind="current=== 1?'pointer-events: none': ''">
       <i class="chevron left icon"></i>
     </a>
     <a click.delegate="firstPageNumber()" class.bind="current === 1 ? 'disabled item': 'item'" style.bind="current=== 1?'pointer-events: none': ''">
           First
     </a>
-    <a repeat.for="index of indexArray" click.delegate="$parent.btnClick(index)" class.bind="current==index?'item active':'item'">${index}</a>
+    <a repeat.for="index of numberArr" click.delegate="$parent.btnClick(index)" class.bind="current==index?'item active':'item'">${index}</a>
     <a click.delegate="lastPageNumber()" class.bind="current==pages?'disabled item':'item'" style.bind="current == pages?'pointer-events: none': ''">
          Last
      </a>

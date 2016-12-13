@@ -1,10 +1,14 @@
 // polyfill fetch client conditionally
 
 export class Datatable { 
-   pageNumber:number
-   pageSize:number
-   total :number
-   current :number
+   pageSize:number=10
+   total :number=130
+   current :number=1
+   allPage:number
+   pageSize1:number=10
+   total1 :number=100
+   current1 :number=1
+   allPage1:number
   slect = "1"
   dtTime: any
   pendding: boolean = true
@@ -58,16 +62,14 @@ export class Datatable {
   }]
  
  
+
+
  constructor(){
-   this.pageNumber = 1
-   this.pageSize =20
-  this.total = 100
-   this.current = 1
-   this.dtTime=""
+   this.allPage = Math.ceil(this.total / this.pageSize)
+   this.allPage1 = Math.ceil(this.total1 / this.pageSize1)
+   //this.dtTime=""
  }
-  activate() {
-     
-  } 
+  
 
   attached() {
    

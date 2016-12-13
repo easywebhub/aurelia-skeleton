@@ -30,5 +30,6 @@ export class Users {
 
     const response = await http.fetch('users');
     this.users = await response.json();
+    console.log('data',this.users)
   }
 }

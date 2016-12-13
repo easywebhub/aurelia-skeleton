@@ -96,17 +96,19 @@ export class Datatable {
     http.configure(config => {
       config
         .useStandardConfiguration()
-        .withBaseUrl('http://api.easywebhub.com/');
+        .withBaseUrl('https://api.github.com/');
     });
 
-    const response = await http.fetch('website/all');
-    var data = await response.json();
-    this.listData=data.Data
-    this.total= (data as any).ItemsCount;
-    console.log('total',this.total)
+    const response = await http.fetch('users');
+    this.listData = await response.json();
+    
+    this.total= (this.listData).length;
+    console.log('total',this.listData)
     this.allPage = Math.ceil(this.total / this.pageSize)
     
 }
+ 
+  
   
 
   attached() {

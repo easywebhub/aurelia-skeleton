@@ -14,7 +14,7 @@
           First
     </a>
     <a repeat.for="index of numberArr" click.delegate="$parent.btnClick(index)" class.bind="currentPage==index?'item active':'item'">${index}</a>
-    <a click.delegate="lastPageNumber()" class.bind="currentPage==pages?'disabled item':'item'" style.bind="currentPage == pageAll?'pointer-events: none': ''">
+    <a click.delegate="lastPageNumber()" class.bind="currentPage==pageAll?'disabled item':'item'" style.bind="currentPage == pageAll?'pointer-events: none': ''">
          Last
      </a>
     <a click.delegate="NextPage()"class.bind="currentPage === pageAll ? 'disabled item': 'item'" style.bind="currentPage=== pageAll?'pointer-events: none': ''">

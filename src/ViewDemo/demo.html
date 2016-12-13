@@ -139,12 +139,12 @@ ${slect}
      <table class="ui table" >
                 <thead>
                     <tr>
-
+                        
                         <th>Stt</th>
-                        <th>Id</th>
-                        <th>Tên Website</th>
+                        <th>subscriptions url</th>
+                        <th>type</th>
                         <!--<th>Tên Website hiển thị</th>-->
-                        <th>Url</th>
+                        <th>url</th>
                         <!--<th>Stagging</th>
                         <th>Sản phẩm</th>
                         <th>Kiểu</th>-->
@@ -157,10 +157,10 @@ ${slect}
                     <tbody ref="mydata" items.bind="listData">
                         <tr repeat.for="item of mydata.items |takeFromTo:(current-1)*(pageSize):current*(pageSize)">
                             <td>${(current-1)*10+$index+1}</td>
-                            <td>${item.Id}</td>
-                            <td>${item.Name}</td>
+                            <td>${item.subscriptions_url}</td>
+                            <td>${item.type}</td>
                             <!--<td>${item.DisplayName}</td>-->
-                            <td>${item.Url}</td>
+                            <td>${item.url}</td>
                             <!--<td>${item.Stagging}</td>
                             <td>${item.Production}</td>
                             <td>${item.Type}</td>-->

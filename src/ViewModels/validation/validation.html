@@ -1,0 +1,28 @@
+<template>
+  <div class="container">
+    
+  </div>
+  <form class="ui form" submit.delegate="submit()">
+    <!--<ul><li repeat.for="error of controller.errors">${error.message}</li></ul>-->
+
+    <div class="field">
+      <label  for="first">First Name</label>
+      <input type="text" id="first" placeholder="First Name"
+             value.bind="firstName & validate">
+    </div>
+
+    <div class="field">
+      <label  for="last">Last Name</label>
+      <input type="text" id="last" placeholder="Last Name"
+             value.bind="lastName & validate">
+    </div>
+
+    <div class="field">
+      <label  for="email">Email</label>
+      <input type="email" id="email" placeholder="Email"
+             value.bind="email & validate">
+    </div>
+
+    <button class="ui button" type="submit">Submit</button>
+  </form>
+</template>

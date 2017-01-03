@@ -30,6 +30,7 @@ export async function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
     .feature('resources/ui')
+    .plugin('aurelia-validation')
     .developmentLogging();
 
   // Uncomment the line below to enable animation.

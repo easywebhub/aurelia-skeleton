@@ -64,7 +64,7 @@
   "homepage": "https://github.com/aurelia/skeleton-navigation#readme",
   "aurelia": {
     "build": {
-      "resources": []
+      "resources": ["aurelia-validation"]
     }
   },
   "dependencies": {
@@ -82,9 +82,10 @@
     "aurelia-templating-binding": "^1.0.0",
     "aurelia-templating-resources": "^1.1.1",
     "aurelia-templating-router": "^1.0.0",
+    "aurelia-validation": "^1.0.0-beta.1.0.1",
     "bluebird": "^3.4.6",
     "bootstrap": "^3.3.7",
-    "ckeditor": "^4.6.0",
+    "ckeditor": "^4.6.1",
     "datatables": "^1.10.12",
     "datatables.net-dt": "^1.10.12",
     "font-awesome": "^4.7.0",
